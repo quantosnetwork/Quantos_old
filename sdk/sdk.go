@@ -37,17 +37,14 @@ type AccountManager interface {
 	GetAccountFromAddress(addr address.Address) *address.Account
 	Wallet()
 	Keys() KeyManager
-	Authenticate(args ... []byte) bool
-
+	Authenticate(args ...[]byte) bool
 }
 type Protocol interface {
 	P2P()
 	KeyExchangeProtocol()
-
 }
 
 type VM interface {
-
 }
 
 type API interface {

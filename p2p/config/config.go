@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"github.com/davecgh/go-spew/spew"
 	"github.com/mitchellh/go-homedir"
+	"hash/crc32"
 	"io"
 	"os"
 	"path/filepath"
@@ -15,34 +16,33 @@ import (
 )
 
 type Config struct {
-	Identity  Identity
-	Datastore DataStore
-	Addresses Addresses
-	Mounts    Mounts
-	Discovery Discovery
-	Bootstrap []string
-	Routing   Routing
-	QNS Qns
-	Peering Peering
-	DNS DNS
-	Plugins Plugins
-	API API
-	AutoNAT AutoNATConfig
-	Gateway Gateway
-	Chain Blockchain
-	Consensus Consensus
-	PubSub  PubsubConfig
-	Pinning Pinning
-	Swarm SwarmConfig
+	Identity     Identity
+	Datastore    DataStore
+	Addresses    Addresses
+	Mounts       Mounts
+	Discovery    Discovery
+	Bootstrap    []string
+	Routing      Routing
+	QNS          Qns
+	Peering      Peering
+	DNS          DNS
+	Plugins      Plugins
+	API          API
+	AutoNAT      AutoNATConfig
+	Gateway      Gateway
+	Chain        Blockchain
+	Consensus    Consensus
+	PubSub       PubsubConfig
+	Pinning      Pinning
+	Swarm        SwarmConfig
 	SecretsVault interface{}
 }
 
-
 const (
-	DefaultPathName = ".quantosnetwork"
-	DefaultPathRoot = "~/"+DefaultPathName
+	DefaultPathName   = ".quantosnetwork"
+	DefaultPathRoot   = "~/" + DefaultPathName
 	DefaultConfigFile = "config"
-	EnvDir = "QUANTOS_PATH"
+	EnvDir            = "QUANTOS_PATH"
 )
 
 func PathRoot() (string, error) {
@@ -92,10 +92,10 @@ func InitWithIdentity(identity Identity) (*Config, error) {
 		Addresses: addressesConfig(),
 		Datastore: datastore,
 		Bootstrap: _default.BootstrapPeerStrings(bootstrapPeers),
-		Identity: identity,
+		Identity:  identity,
 		Discovery: Discovery{
 			MDNS: MDNS{
-				Enabled: true,
+				Enabled:  true,
 				Interval: 10,
 			},
 		},
@@ -103,12 +103,12 @@ func InitWithIdentity(identity Identity) (*Config, error) {
 			Type: "dht",
 		},
 		Mounts: Mounts{
-			QFS: "/qfs",
-			QNS: "/qns",
-			QCNT: "/qcnt",
-			QWAL: "/qwallets",
-			QLive: "/quantos",
-			QTest: "/quantostest",
+			QFS:    "/qfs",
+			QNS:    "/qns",
+			QCNT:   "/qcnt",
+			QWAL:   "/qwallets",
+			QLive:  "/quantos",
+			QTest:  "/quantostest",
 			QLocal: "/qlocal",
 		},
 		QNS: Qns{
@@ -157,7 +157,6 @@ const DefaultConnMgrLowWater = 600
 // grace period
 const DefaultConnMgrGracePeriod = time.Second * 20
 
-
 func addressesConfig() Addresses {
 	return Addresses{
 		Swarm: []string{
@@ -186,16 +185,16 @@ func DefaultDatastoreConfig() DataStore {
 }
 
 func badgerSpec() map[string]interface{} {
-return map[string]interface{}{
-"type":   "measure",
-"prefix": "badger.datastore",
-"child": map[string]interface{}{
-"type":       "badgerds",
-"path":       "badgerds",
-"syncWrites": false,
-"truncate":   true,
-},
-}
+	return map[string]interface{}{
+		"type":   "measure",
+		"prefix": "badger.datastore",
+		"child": map[string]interface{}{
+			"type":       "badgerds",
+			"path":       "badgerds",
+			"syncWrites": false,
+			"truncate":   true,
+		},
+	}
 }
 
 func flatfsSpec() map[string]interface{} {
@@ -246,13 +245,16 @@ func CreateIdentity(out io.Writer) (Identity, error) {
 	if err != nil {
 		return ident, err
 	}
-	spew.Dump(sk)
+	pkBytes, _ := crypto.MarshalPublicKey(pk)
+	spew.Dump(pkBytes)
 	ident.PrivKey = base64.StdEncoding.EncodeToString(skbytes)
 	id, err := peer.IDFromPublicKey(pk)
 	if err != nil {
 		return ident, err
 	}
 	spew.Dump(id)
+	checksum := crc32.ChecksumIEEE(pkBytes)
+	spew.Dump(checksum)
 	ident.PeerID = id.Pretty()
 	fmt.Fprintf(out, "peer identity: %s\n", ident.PeerID)
 	return ident, nil

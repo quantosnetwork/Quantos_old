@@ -23,15 +23,24 @@ package main
 
 import (
 	"Quantos/p2p/config"
+	"Quantos/sdk"
+	"fmt"
 	"github.com/davecgh/go-spew/spew"
 	"os"
 )
 
 func main() {
-c, err := config.Init(os.Stdout)
-if err != nil {
-	panic(err)
-}
-spew.Dump(c.Identity)
+	c, err := config.Init(os.Stdout)
+	addrSDK := sdk.GetAddressSDK()
+	addrSDK.InitSDK("test")
+	var out string
+	o := addrSDK.GenerateQBITWalletAddress(out)
+	z := addrSDK.GetZeroAddress()
+	spew.Dump(z)
+	fmt.Printf("New Wallet Address (QBIT): %s \n", o)
+	if err != nil {
+		panic(err)
+	}
+	spew.Dump(c.Identity)
 	//cmd.Execute()
 }
