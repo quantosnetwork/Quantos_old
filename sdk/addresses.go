@@ -2,6 +2,7 @@ package sdk
 
 import (
 	"Quantos/address"
+	"Quantos/sdk/config"
 )
 
 type AddressSDK interface {
@@ -39,11 +40,11 @@ func (a addrFunctions) GenerateBlockAddress(in InputData, out OutputData) {
 	panic("implement me")
 }
 
-var CurrentNetworkID NetworkID
+var CurrentNetworkID config.NetworkID
 
 func (a addrFunctions) GenerateQBITWalletAddress(out string) string {
 
-	addr := address.GenerateNewQbitAddress(CurrentNetworkID, Version, QBIT_ADDRESS_PREFIX, uint32(0))
+	addr := address.GenerateNewQbitAddress(CurrentNetworkID, config.Version, config.QBIT_ADDRESS_PREFIX, uint32(0))
 	out = addr.String()
 	return out
 }
@@ -52,13 +53,13 @@ func (a addrFunctions) InitSDK(netID string) {
 	switch netID {
 	case "live":
 
-		CurrentNetworkID = LIVENET
+		CurrentNetworkID = config.LIVENET
 		return
 	case "test":
-		CurrentNetworkID = TESTNET
+		CurrentNetworkID = config.TESTNET
 		return
 	case "local":
-		CurrentNetworkID = LOCALNET
+		CurrentNetworkID = config.LOCALNET
 		return
 	}
 	return
@@ -73,7 +74,7 @@ func (a addrFunctions) VerifyAddress(in string, out bool) {
 }
 
 func (a addrFunctions) GetZeroAddress() string {
-	return ZEROADDRESS
+	return config.ZEROADDRESS
 }
 
 func GetAddressSDK() AddressSDK {

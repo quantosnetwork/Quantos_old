@@ -22,15 +22,13 @@ THE SOFTWARE.
 package main
 
 import (
-	"Quantos/p2p/config"
 	"Quantos/sdk"
-	"fmt"
-	"github.com/davecgh/go-spew/spew"
-	"os"
+	"crypto/rand"
+	"log"
 )
 
 func main() {
-	c, err := config.Init(os.Stdout)
+	/*c, err := config.Init(os.Stdout)
 	addrSDK := sdk.GetAddressSDK()
 	addrSDK.InitSDK("test")
 	var out string
@@ -41,6 +39,10 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	spew.Dump(c.Identity)
+	spew.Dump(c.Identity)*/
+	buf := make([]byte, 64)
+	rand.Read(buf)
+	n := sdk.Uint256StringFromBytes(buf[:])
+	log.Println(n)
 	//cmd.Execute()
 }

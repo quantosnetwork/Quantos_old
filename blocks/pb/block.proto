@@ -1,0 +1,49 @@
+syntax="proto3";
+
+package quantos.blocks.pb;
+option go_package="blockspb";
+
+service BlockAPI {
+  rpc GetBlockByID(BlockRequest) returns (BlockResponse);
+  rpc SyncAllBlocks(AllBlocksRequest) returns (stream AllBlocks);
+  rpc GetBlockHeader(BlockRequest) returns (BlockHeader);
+  rpc GetBlockHeaders(AllBlocksRequest) returns (stream BlockHeader);
+
+}
+
+message BlockRequest {
+  string chain_id = 1;
+  string block_id = 2;
+}
+
+message BlockResponse {
+  string chain_id = 1;
+  string block_hash = 2;
+  string payload = 3;
+}
+
+message AllBlocksRequest {
+  string chain_id = 1;
+}
+
+message AllBlocks {
+  repeated BlockResponse blocks = 1;
+}
+
+message BlockHeader {
+  uint32 height = 1;
+  string previousHash = 2;
+  string validator = 3;
+  string stateMerkleRoot = 4;
+  string txMerkleRoot = 5;
+  string receiptsMerkleRoot = 6;
+  string numberAncestors = 7;
+  int64 timestamp = 8;
+  repeated bytes extraData = 9;
+  string dposConsensusHash = 10;
+}
+
+message Block {
+  BlockHeader blockHeader = 1;
+  
+}

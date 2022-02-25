@@ -9,6 +9,7 @@ require (
 	github.com/dgraph-io/badger v1.6.2
 	github.com/gogo/protobuf v1.3.2
 	github.com/google/uuid v1.1.2
+	github.com/holiman/uint256 v1.2.0
 	github.com/iancoleman/strcase v0.2.0
 	github.com/ipfs/go-cid v0.0.7
 	github.com/ipfs/go-datastore v0.5.1

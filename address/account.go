@@ -6,12 +6,12 @@ import (
 )
 
 type Account struct {
-	ID uuid.UUID
-	address *KeyManager
-	Address string
+	ID           uuid.UUID
+	address      *KeyManager
+	Address      string
 	loadedMaster string
-	Lock atomic.Bool
-	Wallet interface{}
+	Lock         atomic.Bool
+	Wallet       interface{}
 }
 
 type account interface {
@@ -21,5 +21,11 @@ type account interface {
 	Lock() bool
 	GetAllTransactions() map[string]interface{}
 	GetOneTransaction(txid string) interface{}
+}
 
+type AccountState struct {
+	Nonce               []byte
+	Balance             string
+	MerkleRoot          []byte
+	VMCodeHashToExecute []byte
 }
