@@ -1,18 +1,21 @@
 package sdk
 
 import (
-	"Quantos/address"
 	"Quantos/sdk/config"
+	"Quantos/uint512"
+	"github.com/holiman/uint256"
+	"math/big"
 )
 
 type AddressSDK interface {
 	InitSDK(netID string)
-	GenerateQBITWalletAddress(out string) string
+	GenerateMasterWalletAddress() (*uint512.Address, string)
 	VerifyAddress(in string, out bool)
 	IsZeroAddress(in string, out bool)
 	GenerateTXAddress(in InputData, out OutputData)
 	GenerateBlockAddress(in InputData, out OutputData)
 	GetZeroAddress() string
+	DeriveFromMaster(master *uint512.Address, derivationPath string) string
 }
 
 type InputData struct {
@@ -42,11 +45,20 @@ func (a addrFunctions) GenerateBlockAddress(in InputData, out OutputData) {
 
 var CurrentNetworkID config.NetworkID
 
-func (a addrFunctions) GenerateQBITWalletAddress(out string) string {
+func (a addrFunctions) GenerateMasterWalletAddress() (*uint512.Address, string) {
 
-	addr := address.GenerateNewQbitAddress(CurrentNetworkID, config.Version, config.QBIT_ADDRESS_PREFIX, uint32(0))
-	out = addr.String()
-	return out
+	addr := &uint512.Address{}
+	am := addr.Raw.Create()
+	m := am.Master()
+	masterBig := new(big.Int).SetBytes(m)
+	out1, _ := uint256.FromBig(masterBig)
+	out := out1.String()
+
+	return am, out
+}
+
+func (a addrFunctions) DeriveFromMaster(master *uint512.Address, derivationPath string) string {
+	return master.Derive()
 }
 
 func (a addrFunctions) InitSDK(netID string) {

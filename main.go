@@ -23,7 +23,6 @@ package main
 
 import (
 	"Quantos/sdk"
-	"crypto/rand"
 	"log"
 )
 
@@ -40,9 +39,12 @@ func main() {
 		panic(err)
 	}
 	spew.Dump(c.Identity)*/
-	buf := make([]byte, 64)
-	rand.Read(buf)
-	n := sdk.Uint256StringFromBytes(buf[:])
-	log.Println(n)
+
 	//cmd.Execute()
+	raw, m := sdk.GetAddressSDK().GenerateMasterWalletAddress()
+	d := sdk.GetAddressSDK().DeriveFromMaster(raw, m)
+
+	log.Printf("Master Key (to unlock your wallet): %s", m)
+	log.Printf("Your wallet address (long form): %s \n", d[:40])
+
 }
