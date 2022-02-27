@@ -207,33 +207,31 @@ type treeWalkFunction = func(b *branch, h func([]byte))
 
 var TreeReceipt []byte
 
-func (t *Tree) Walk() map[int]map[int][]string {
+func (t *Tree) Walk() []map[int][]string {
 	branches := t.Branches
 	state := IDLE
-	height := 0
-	hashes := map[int]map[int][]string{}
+	//height := 0
+	var hashes []map[int][]string
+	hashes = make([]map[int][]string, len(branches))
 	for i := 0; i < len(branches); i++ {
 		state = WALKING
-		height = i
+		//height = i
 		branch := branches[i]
-		if branch.hasChildren {
-			for j := 0; j < len(branch.multipleBranches); j++ {
-				state = WALKING
-				child := branch.multipleBranches[j]
-				left := child.leftLeaf.hash()
-				right := branch.leftLeaf.hash()
-				hashes[height][j] = []string{left.String(), right.String()}
-			}
-		}
+
 		state = HASHING
 		left := branch.leftLeaf.hash()
 		right := branch.rightLeaf.hash()
-		hashes[height] = map[int][]string{}
-		hashes[height][i] = []string{left.String(), right.String()}
+
+		leaves := map[int][]string{}
+		leaves[0] = []string{left.String(), right.String()}
+		hashes = append(hashes, leaves)
+		/*hashes[height][0] = left.String()
+		hashes[height][1] = right.String()*/
+
 	}
 
 	state = DONE
-	spew.Dump(hashes)
+
 	if state == DONE {
 		return hashes
 	}
@@ -241,7 +239,7 @@ func (t *Tree) Walk() map[int]map[int][]string {
 	//return nil
 }
 
-func (t *Tree) hashMerkleRoot(hashes map[int]map[int][]string) []byte {
+func (t *Tree) hashMerkleRoot(hashes []map[int][]string) []byte {
 
 	root := &struct {
 		height    int
@@ -256,27 +254,21 @@ func (t *Tree) hashMerkleRoot(hashes map[int]map[int][]string) []byte {
 	root.height = 0
 	root.timestamp = time.Now().UnixNano()
 	hs := make([][]byte, len(hashes))
-	for i := 0; i < len(hashes); i++ {
-		if len(hashes[i]) > 1 {
-			hs2 := make([][]byte, len(hashes[i]))
-			for j := 0; j < len(hashes[i]); j++ {
-				hslevel2 := hashes[i][j]
-				hs2[j] = []byte(hslevel2[0])
-				hasher.Write(hs2[j])
-				root.height += j
-			}
+	for i := 0; i < len(hashes)-1; i++ {
+
+		toJoin := hashes[i][0]
+		hsj := strings.Join(toJoin, "")
+
+		if hsj != "" {
+			spew.Dump(hsj)
+			hs[i] = []byte(hsj)
+			hasher.Write(hs[i])
+			root.height += i
 		}
-		hslevel1 := hashes
-		hsj := strings.Join(hslevel1[i][i], "")
-		//spew.Dump(hsj)
-		hs[i] = []byte(hsj)
-		hasher.Write(hs[i])
-		root.height += i
 	}
 	rhash := blake3.Sum512(hasher.Sum(nil))
 	root.hash = rhash[:]
 	root.String = hex.EncodeToString(root.hash)
-	//spew.Dump(hashes)
 
 	t.MerkleRoot = root.hash
 	return t.MerkleRoot
