@@ -9,8 +9,31 @@ import (
 	"go.uber.org/atomic"
 	"log"
 	"strings"
+	"sync"
 	"time"
 )
+
+/*
+
+	@dev Info about the merkle trie structure
+
+	Blake3 Merkle tree (sum512)
+	Leaf size: 128 bytes
+	Root size: 128 bytes
+	MergeLeaf size: 256 bytes
+
+	ML = MergeLeaf (Node hash)
+	C = count
+	L = Leaf
+	mr merkle root
+	H = Blake3 hasher sum 512
+	++ = all of that type
+
+	f(mr) = H SUM(ML++)
+	ML = (LH[1] + LH[2])
+	LH = H(L)
+
+*/
 
 type Hash [64]byte
 
@@ -241,6 +264,8 @@ func (t *Tree) Walk() []map[int][]string {
 
 func (t *Tree) hashMerkleRoot(hashes []map[int][]string) []byte {
 
+	var mu sync.Mutex
+
 	root := &struct {
 		height    int
 		timestamp int64
@@ -254,6 +279,8 @@ func (t *Tree) hashMerkleRoot(hashes []map[int][]string) []byte {
 	root.height = 0
 	root.timestamp = time.Now().UnixNano()
 	hs := make([][]byte, len(hashes))
+	mu.Lock()
+	defer mu.Unlock()
 	for i := 0; i < len(hashes)-1; i++ {
 
 		toJoin := hashes[i][0]
