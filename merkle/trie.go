@@ -257,7 +257,6 @@ func (t *Tree) hashMerkleRoot(hashes map[int]map[int][]string) []byte {
 	root.timestamp = time.Now().UnixNano()
 	hs := make([][]byte, len(hashes))
 	for i := 0; i < len(hashes); i++ {
-		log.Print(i)
 		if len(hashes[i]) > 1 {
 			hs2 := make([][]byte, len(hashes[i]))
 			for j := 0; j < len(hashes[i]); j++ {
@@ -269,7 +268,7 @@ func (t *Tree) hashMerkleRoot(hashes map[int]map[int][]string) []byte {
 		}
 		hslevel1 := hashes
 		hsj := strings.Join(hslevel1[i][i], "")
-		spew.Dump(hsj)
+		//spew.Dump(hsj)
 		hs[i] = []byte(hsj)
 		hasher.Write(hs[i])
 		root.height += i
@@ -277,7 +276,7 @@ func (t *Tree) hashMerkleRoot(hashes map[int]map[int][]string) []byte {
 	rhash := blake3.Sum512(hasher.Sum(nil))
 	root.hash = rhash[:]
 	root.String = hex.EncodeToString(root.hash)
-	spew.Dump(hashes)
+	//spew.Dump(hashes)
 
 	t.MerkleRoot = root.hash
 	return t.MerkleRoot
