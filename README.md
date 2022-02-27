@@ -1,11 +1,10 @@
-# Quantos
 
 # QUANTOS (QBIT)
 
 ## THE LOW-FEE UTILITY CHAIN OF TOMMOROW
 
 
-## WHITE PAPER V 1.0
+## WHITE PAPER V 1.0 (WIP)
 
 GITHUB URL:  https://github.com/quantosnetwork/Quantos
 
@@ -96,3 +95,5 @@ We are at round3, which means that those are the algorithms that have been teste
 
 Quantos is a project that was thought about in 2018 and did evolve with time to become Quantos Networks. 
 Quantos like the name suggests is closely linked with quantum technologies. The "OS" part stands for "Operating System".
+
+(this is a work in progress...)
