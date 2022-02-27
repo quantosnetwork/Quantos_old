@@ -18,9 +18,9 @@ import (
 	@dev Info about the merkle trie structure
 
 	Blake3 Merkle tree (sum512)
-	Leaf size: 128 bytes
-	Root size: 128 bytes
-	MergeLeaf size: 256 bytes
+	Leaf size: 128 [64]bytes
+	Root size: 128 [64]bytes
+	MergeLeaf size: 256 [128]bytes
 
 	ML = MergeLeaf (Node hash)
 	C = count
