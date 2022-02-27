@@ -22,7 +22,9 @@ THE SOFTWARE.
 package main
 
 import (
+	"Quantos/merkle"
 	"Quantos/sdk"
+	"fmt"
 	"log"
 )
 
@@ -46,5 +48,14 @@ func main() {
 
 	log.Printf("Master Key (to unlock your wallet): %s", m)
 	log.Printf("Your wallet address (long form): %s \n", d[:40])
+
+	content := make([]merkle.TreeContent, 5)
+
+	for i := 0; i < 5; i++ {
+		c := []byte(fmt.Sprintf("content %x", i))
+		content[i] = merkle.TreeContent{c}
+	}
+
+	merkle.NewTree(content)
 
 }

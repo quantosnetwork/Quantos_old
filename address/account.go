@@ -5,13 +5,16 @@ import (
 	"go.uber.org/atomic"
 )
 
+type Address interface{}
+
 type Account struct {
-	ID           uuid.UUID
-	address      *KeyManager
-	Address      string
-	loadedMaster string
-	Lock         atomic.Bool
-	Wallet       interface{}
+	ID             uuid.UUID
+	address        *Address
+	Address        string
+	loadedMaster   string
+	Lock           atomic.Bool
+	Wallet         interface{}
+	CreatedAtBlock uint32
 }
 
 type account interface {
