@@ -1,4 +1,29 @@
 
+# THIS REPO IS BEING SPLIT INTO DIFFERENT REPOSITORIES TO MAKE THE DEVELOPMENT MORE MODULAR. SOME OF THE CODE HERE IS OUTDATED. THE P2P STUFF IS HAVING ITS OWN REPO NOW. WILL POST THE UPDATE ONCE THE SPLIT IS 100% DONE WITH REPO LINKS OR YOU CAN CHECK THE OTHER PUBLIC REPOS HERE.
+
+## HELP WANTED
+
+While Quantos network is the work of one individual currently, I can use all the help I can to make it faster. The project evolves daily and would like other people input. Here is what I am looking for:
+
+
+- UX Interface experts (python tk, c++, golang, javascript... not set on the wallet programming language yet)
+
+- Flexible (not gymnastics!) Programmers with prior CORE blockchain development experience (CORE is important here... layer 2-3-4 or solidity programming don't count)
+
+- Technical writers (to help communicate the project idea better)
+
+- Algorithm writers (yea thats my job but a hand would be cool)
+
+- If you are a top dev, got skills and a track record, let me know!
+
+
+email: dev@quantos.network
+
+
+ #### NOTE: There is not website yet lol no time for that so yea that could be helpful too :P 
+
+
+
 # QUANTOS (QBIT)
 
 ## THE LOW-FEE UTILITY CHAIN OF TOMMOROW
