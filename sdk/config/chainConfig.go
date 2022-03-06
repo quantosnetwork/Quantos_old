@@ -1,13 +1,9 @@
 package config
 
-import (
-	p2pConf "github.com/quantosnetwork/Quantos/p2p/config"
-)
-
 type ChainConfig struct {
-	NetID     NetworkID
-	Version   [2]byte
-	P2PConfig p2pConf.Config
+	NetID   NetworkID
+	Version [2]byte
+
 	Host      string
 	Port      string
 	BlockChan chan interface{}
