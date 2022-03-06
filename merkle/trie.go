@@ -190,7 +190,7 @@ func (tb *treeBuilder) _prepare(m *Tree) {
 		if height < len(tb.treeContents)-1 {
 			tb._addLeaves(m, height, tb.treeContents[i], tb.treeContents[i+1])
 		} else {
-			tb._addLeaves(m, height, tb.treeContents[i-1], tb.treeContents[i-1])
+			tb._addLeaves(m, height, tb.treeContents[i], tb.treeContents[i-1])
 		}
 	}
 	tb.state = DONE
