@@ -1,8 +1,8 @@
 package ast
 
 import (
-	"Quantos/quantix/runeset"
-	"Quantos/quantix/token"
+	"github.com/quantosnetwork/Quantosquantix/runeset"
+	"github.com/quantosnetwork/Quantosquantix/token"
 	"bytes"
 	"fmt"
 )

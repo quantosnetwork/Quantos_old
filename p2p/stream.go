@@ -1,37 +1,36 @@
 package p2p
 
-
 import (
-	"Quantos/p2p/go-libp2p-core/connmgr"
-	"Quantos/p2p/go-libp2p-core/peer"
-	"Quantos/p2p/go-libp2p-core/protocol"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/connmgr"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/peer"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/protocol"
 
 	"io"
 
-	net "Quantos/p2p/go-libp2p-core/network"
 	ma "github.com/multiformats/go-multiaddr"
 	manet "github.com/multiformats/go-multiaddr/net"
+	net "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/network"
 	"sync"
 )
 
 const cmgrTag = "stream-fwd"
 
 type Stream struct {
-	id uint64
-	Protocol protocol.ID
+	id         uint64
+	Protocol   protocol.ID
 	OriginAddr ma.Multiaddr
 	TargetAddr ma.Multiaddr
-	peer peer.ID
-	Local manet.Conn
-	Remote net.Stream
-	Registry *StreamRegistry
+	peer       peer.ID
+	Local      manet.Conn
+	Remote     net.Stream
+	Registry   *StreamRegistry
 }
 
 type StreamRegistry struct {
 	sync.Mutex
-	Streams     map[uint64]*Stream
-	conns       map[peer.ID]int
-	nextID uint64
+	Streams map[uint64]*Stream
+	conns   map[peer.ID]int
+	nextID  uint64
 	connmgr.ConnManager
 }
 

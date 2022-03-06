@@ -1,7 +1,7 @@
 package protocol
 
 import (
-	"Quantos/crypto"
+	"github.com/quantosnetwork/Quantoscrypto"
 	"bufio"
 	"errors"
 	"fmt"
@@ -13,14 +13,13 @@ import (
 
 const KEMNAME = "kyber512"
 
-
 type keyExchange interface {
 	initKemKX(host, port string)
 	handleKemKX(conn net.Conn)
 }
 
 type KeyExchange struct {
-	conn net.Conn
+	conn       net.Conn
 	clientKeys *crypto.KemKeys
 	serverKeys *crypto.ServerKeys
 }
@@ -57,7 +56,7 @@ func (kex KeyExchange) handleKemKX(conn net.Conn) {
 		conn.Close()
 		return
 	}
-	cipherText, sharedSecret, _  := kex.serverKeys.Server.EncapSecret(clientPublicKey)
+	cipherText, sharedSecret, _ := kex.serverKeys.Server.EncapSecret(clientPublicKey)
 	_, err = conn.Write(cipherText)
 	if err != nil {
 		log.Fatal(err)

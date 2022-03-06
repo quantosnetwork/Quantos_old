@@ -1,13 +1,13 @@
 package config
 
 import (
-	_default "Quantos/p2p/config/default"
-	"Quantos/p2p/go-libp2p-core/crypto"
-	"Quantos/p2p/go-libp2p-core/peer"
 	"encoding/base64"
 	"fmt"
 	"github.com/davecgh/go-spew/spew"
 	"github.com/mitchellh/go-homedir"
+	_default "github.com/quantosnetwork/Quantos/p2p/config/default"
+	"github.com/quantosnetwork/Quantos/p2p/go-libp2p-core/crypto"
+	"github.com/quantosnetwork/Quantos/p2p/go-libp2p-core/peer"
 	"hash/crc32"
 	"io"
 	"os"

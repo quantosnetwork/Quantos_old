@@ -11,7 +11,7 @@ import (
 	"errors"
 	"io"
 
-	pb "Quantos/p2p/go-libp2p-core/crypto/pb"
+	pb "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/crypto/pb"
 
 	"github.com/minio/sha256-simd"
 )

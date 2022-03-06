@@ -1,7 +1,7 @@
 package hashtable
 
 import (
-	"Quantos/protocol"
+	"github.com/quantosnetwork/Quantosprotocol"
 	"fmt"
 	"sync"
 	"github.com/davecgh/go-spew/spew"
@@ -12,9 +12,8 @@ type Value interface{}
 
 type HashTable struct {
 	items map[int]Value
-	lock sync.RWMutex
+	lock  sync.RWMutex
 }
-
 
 func _hash(k Key) int {
 	key := fmt.Sprintf("%s", k)

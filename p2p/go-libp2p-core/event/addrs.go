@@ -1,7 +1,7 @@
 package event
 
 import (
-	"Quantos/p2p/go-libp2p-core/record"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/record"
 	ma "github.com/multiformats/go-multiaddr"
 )
 

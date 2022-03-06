@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"io"
 
-	pb "Quantos/p2p/go-libp2p-core/crypto/pb"
+	pb "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/crypto/pb"
 
 	"github.com/btcsuite/btcd/btcec"
 	"github.com/minio/sha256-simd"

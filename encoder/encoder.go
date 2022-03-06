@@ -1,10 +1,9 @@
 package encoder
 
 import (
-	"Quantos/crypto"
+	"github.com/quantosnetwork/Quantoscrypto"
 
 	"fmt"
-
 
 	"sort"
 	"sync"
@@ -22,8 +21,8 @@ type Encoder struct {
 
 type sliceHeader struct {
 	data unsafe.Pointer
-	len int
-	cap int
+	len  int
+	cap  int
 }
 
 //go:nosplit

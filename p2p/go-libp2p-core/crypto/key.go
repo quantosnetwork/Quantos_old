@@ -12,7 +12,7 @@ import (
 	"fmt"
 	"io"
 
-	"Quantos/p2p/go-libp2p-core/crypto/pb"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/crypto/pb"
 
 	"github.com/gogo/protobuf/proto"
 )
@@ -29,7 +29,6 @@ const (
 	// KYBER is an enum for the supported NIST Post-Quantum submission Crystal-Kyber v3
 	KYBER
 )
-
 
 var (
 	// ErrBadKeyType is returned when a key is not supported
@@ -56,8 +55,7 @@ var PubKeyUnmarshallers = map[pb.KeyType]PubKeyUnmarshaller{
 	pb.KeyType_Ed25519:   UnmarshalEd25519PublicKey,
 	pb.KeyType_Secp256k1: UnmarshalSecp256k1PublicKey,
 	pb.KeyType_ECDSA:     UnmarshalECDSAPublicKey,
-	pb.KeyType_KYBER: UnmarshalKyberPublicKey,
-
+	pb.KeyType_KYBER:     UnmarshalKyberPublicKey,
 }
 
 // PrivKeyUnmarshallers is a map of unmarshallers by key type
@@ -66,8 +64,7 @@ var PrivKeyUnmarshallers = map[pb.KeyType]PrivKeyUnmarshaller{
 	pb.KeyType_Ed25519:   UnmarshalEd25519PrivateKey,
 	pb.KeyType_Secp256k1: UnmarshalSecp256k1PrivateKey,
 	pb.KeyType_ECDSA:     UnmarshalECDSAPrivateKey,
-	pb.KeyType_KYBER: UnmarshalKyberPrivateKey,
-
+	pb.KeyType_KYBER:     UnmarshalKyberPrivateKey,
 }
 
 // Key represents a crypto key that can be compared to another key
@@ -103,7 +100,6 @@ type PubKey interface {
 	// Verify that 'sig' is the signed hash of 'data'
 	Verify(data []byte, sig []byte) (bool, error)
 }
-
 
 // GenSharedKey generates the shared key from a given private key
 type GenSharedKey func([]byte) ([]byte, error)

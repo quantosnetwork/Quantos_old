@@ -1,10 +1,10 @@
 package repo
 
 import (
-	"Quantos/p2p/config"
-	"Quantos/p2p/filestore"
-	"Quantos/p2p/keystore"
-	"Quantos/p2p/quantos"
+	"github.com/quantosnetwork/Quantosp2p/config"
+	"github.com/quantosnetwork/Quantosp2p/filestore"
+	"github.com/quantosnetwork/Quantosp2p/keystore"
+	"github.com/quantosnetwork/Quantosp2p/quantos"
 	"context"
 	"errors"
 	"github.com/ipfs/go-datastore/query"

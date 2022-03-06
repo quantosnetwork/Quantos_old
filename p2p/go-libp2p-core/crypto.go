@@ -1,12 +1,11 @@
 package go_libp2p_core
 
 import (
-	pcrypto "Quantos/p2p/go-libp2p-core/crypto"
+	pcrypto "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/crypto"
 )
 
 var _ pcrypto.PrivKey
 var _ pcrypto.PubKey
-
 
 type PrivKey interface {
 	pcrypto.Key

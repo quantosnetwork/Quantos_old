@@ -1,7 +1,7 @@
 package crypto
 
 import (
-	"Quantos/p2p/go-libp2p-core/crypto/pb"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/crypto/pb"
 	"bytes"
 	"go.dedis.ch/kyber/v3"
 	"go.dedis.ch/kyber/v3/group/edwards25519"
@@ -11,11 +11,10 @@ import (
 )
 
 type HardenedKeys struct {
-	group kyber.Group
-	pubKey kyber.Point
+	group   kyber.Group
+	pubKey  kyber.Point
 	privKey kyber.Scalar
-	suite *edwards25519.SuiteEd25519
-
+	suite   *edwards25519.SuiteEd25519
 }
 
 func GenerateHardenedKeys() *HardenedKeys {
@@ -25,14 +24,13 @@ func GenerateHardenedKeys() *HardenedKeys {
 
 	suite := edwards25519.NewBlakeSHA256Ed25519WithRand(rng)
 	h := &HardenedKeys{}
-	sk := suite.Scalar().Pick(rng) // private key
+	sk := suite.Scalar().Pick(rng)   // private key
 	pk := suite.Point().Mul(sk, nil) // public key
 	h.privKey = sk
 	h.pubKey = pk
 	h.suite = suite
 	return h
 }
-
 
 // KyberPrivateKey is a Scalar
 type KyberPrivateKey struct {
@@ -43,7 +41,7 @@ type KyberPrivateKey struct {
 func (k KyberPrivateKey) Equals(key Key) bool {
 	b1, _ := k.Raw()
 	b2, _ := key.Raw()
-	return bytes.Compare(b1,b2) == 0
+	return bytes.Compare(b1, b2) == 0
 }
 
 func (k KyberPrivateKey) Raw() ([]byte, error) {
@@ -64,7 +62,7 @@ func (k KyberPrivateKey) Sign(bytes []byte) ([]byte, error) {
 
 func (k KyberPrivateKey) GetPublic() PubKey {
 	pub := k.s.Point().Mul(k.k, nil)
-	return &KyberPublicKey{k:pub,s:k.s}
+	return &KyberPublicKey{k: pub, s: k.s}
 }
 
 // KyberPublicKey is a Point
@@ -76,7 +74,7 @@ type KyberPublicKey struct {
 func (k KyberPublicKey) Equals(key Key) bool {
 	b1, _ := k.Raw()
 	b2, _ := key.Raw()
-	return bytes.Compare(b1,b2) == 0
+	return bytes.Compare(b1, b2) == 0
 }
 
 func (k KyberPublicKey) Raw() ([]byte, error) {
@@ -97,7 +95,7 @@ func (k KyberPublicKey) Verify(data []byte, sig []byte) (bool, error) {
 
 func GenerateKyberKey() (PrivKey, PubKey, error) {
 	h := GenerateHardenedKeys()
-	return &KyberPrivateKey{k:h.privKey, s: h.suite}, &KyberPublicKey{k:h.pubKey, s: h.suite}, nil
+	return &KyberPrivateKey{k: h.privKey, s: h.suite}, &KyberPublicKey{k: h.pubKey, s: h.suite}, nil
 }
 
 func UnmarshalKyberPublicKey(data []byte) (PubKey, error) {
@@ -121,7 +119,6 @@ func UnmarshalKyberPrivateKey(data []byte) (PrivKey, error) {
 		k: KPriv.k,
 	}, nil
 }
-
 
 // GenerateEd25519Key generates a new ed25519 private and public key pair.
 /*func GenerateEd25519Key(src io.Reader) (PrivKey, PubKey, error) {

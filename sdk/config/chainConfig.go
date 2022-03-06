@@ -1,7 +1,7 @@
 package config
 
 import (
-	p2pConf "Quantos/p2p/config"
+	p2pConf "github.com/quantosnetwork/Quantosp2p/config"
 )
 
 type ChainConfig struct {

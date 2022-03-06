@@ -2,10 +2,8 @@
 package cmd
 
 import (
-	"Quantos/address"
 	"fmt"
-
-
+	"github.com/quantosnetwork/Quantos/address"
 
 	"github.com/spf13/cobra"
 )
@@ -14,7 +12,7 @@ import (
 var addressCmd = &cobra.Command{
 	Use:   "address",
 	Short: "QBit (Quantos) address manager",
-	Long: `QBit (Quantos) address manager`,
+	Long:  `QBit (Quantos) address manager`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("address called")
 	},
@@ -23,12 +21,12 @@ var addressCmd = &cobra.Command{
 //var bip39 bool
 
 var newAddressCmd = &cobra.Command{
-	Use: "new-address",
-	Short:"create a new wallet address",
-	Long: "create a new wallet address",
+	Use:   "new-address",
+	Short: "create a new wallet address",
+	Long:  "create a new wallet address",
 	Run: func(cmd *cobra.Command, args []string) {
 
-	//	bip39 := true
+		//	bip39 := true
 
 		compress, _ := cmd.Flags().GetBool("compress")
 		pass, _ := cmd.Flags().GetString("pass")
@@ -39,10 +37,8 @@ var newAddressCmd = &cobra.Command{
 	},
 }
 
-
 func init() {
 	rootCmd.AddCommand(addressCmd)
-
 
 	newAddressCmd.Flags().BoolP("bip39", "b", false, "mnemonic code for generating deterministic keys")
 	newAddressCmd.Flags().BoolP("compress", "c", true, "generate a compressed public key")
@@ -51,7 +47,6 @@ func init() {
 	newAddressCmd.Flags().String("mnemonic", "", "optional list of words to re-generate a root key")
 
 	addressCmd.AddCommand(newAddressCmd)
-
 
 	// Here you will define your flags and configuration settings.
 

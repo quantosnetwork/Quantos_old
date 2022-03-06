@@ -22,8 +22,9 @@ THE SOFTWARE.
 package main
 
 import (
-	"Quantos/merkle"
-	"Quantos/sdk"
+	"github.com/quantosnetwork/Quantos/merkle"
+	"github.com/quantosnetwork/Quantos/sdk"
+
 	"fmt"
 	"log"
 )

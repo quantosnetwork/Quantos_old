@@ -12,7 +12,7 @@ import (
 	"strings"
 	"sync"
 	"time"
-	ds "Quantos/p2p/repo"
+	ds "github.com/quantosnetwork/Quantosp2p/repo"
 	dsq "github.com/ipfs/go-datastore/query"
 )
 
@@ -38,17 +38,14 @@ func (b *badgerLog) Warningf(format string, args ...interface{}) {
 
 var Log badgerLog
 
-
-
-
 var ErrClosed = errors.New("datastore closed")
 
 type Datastore struct {
-	DB *badger.DB
-	closeLk sync.RWMutex
-	closed bool
-	closeOnce sync.Once
-	closing chan struct{}
+	DB             *badger.DB
+	closeLk        sync.RWMutex
+	closed         bool
+	closeOnce      sync.Once
+	closing        chan struct{}
 	gcDiscardRatio float64
 	gcSleep        time.Duration
 	gcInterval     time.Duration
@@ -57,13 +54,13 @@ type Datastore struct {
 }
 
 type batch struct {
-	ds *Datastore
+	ds         *Datastore
 	writeBatch *badger.WriteBatch
 }
 
 type txn struct {
-	ds *Datastore
-	txn *badger.Txn
+	ds       *Datastore
+	txn      *badger.Txn
 	implicit bool
 }
 
@@ -863,7 +860,6 @@ func (t *txn) query(q dsq.Query) (dsq.Results, error) {
 
 	return qrb.Results(), nil
 }
-
 
 func (t *txn) Commit(ctx context.Context) error {
 	t.ds.closeLk.RLock()

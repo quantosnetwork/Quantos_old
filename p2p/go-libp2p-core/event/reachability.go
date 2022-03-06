@@ -1,7 +1,7 @@
 package event
 
 import (
-	"Quantos/p2p/go-libp2p-core/network"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/network"
 )
 
 // EvtLocalReachabilityChanged is an event struct to be emitted when the local's

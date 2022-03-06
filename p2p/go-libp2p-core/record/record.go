@@ -58,7 +58,7 @@ type Record interface {
 // where the Record type is defined:
 //
 //    package hello_record
-//    import record "Quantos/p2p/go-libp2p-core/record"
+//    import record "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/record"
 //
 //    func init() {
 //        record.RegisterType(&HelloRecord{})

@@ -1,7 +1,7 @@
 package uint512
 
 import (
-	"Quantos/crypto"
+	"github.com/quantosnetwork/Quantoscrypto"
 	"bytes"
 	"crypto/sha256"
 	"encoding/hex"

@@ -7,12 +7,11 @@
 package connmgr
 
 import (
-	"Quantos/p2p/go-libp2p-core/peer"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/peer"
 	"context"
 	"time"
 
-	"Quantos/p2p/go-libp2p-core/network"
-	
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/network"
 )
 
 // SupportsDecay evaluates if the provided ConnManager supports decay, and if

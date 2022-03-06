@@ -1,7 +1,7 @@
 package address
 
 import (
-	"Quantos/uint512"
+	"github.com/quantosnetwork/Quantosuint512"
 	"context"
 	"github.com/holiman/uint256"
 )

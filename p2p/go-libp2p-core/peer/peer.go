@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	"github.com/ipfs/go-cid"
-	ic "Quantos/p2p/go-libp2p-core/crypto"
+	ic "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/crypto"
 	b58 "github.com/mr-tron/base58/base58"
 	mh "github.com/multiformats/go-multihash"
 )

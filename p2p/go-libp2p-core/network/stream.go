@@ -1,7 +1,7 @@
 package network
 
 import (
-	"Quantos/p2p/go-libp2p-core/protocol"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/protocol"
 )
 
 // Stream represents a bidirectional channel between two agents in

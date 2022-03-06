@@ -9,9 +9,9 @@ import (
 	"math"
 	"time"
 
-	ic "Quantos/p2p/go-libp2p-core/crypto"
-	"Quantos/p2p/go-libp2p-core/peer"
-	"Quantos/p2p/go-libp2p-core/record"
+	ic "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/crypto"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/peer"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/record"
 
 	ma "github.com/multiformats/go-multiaddr"
 )

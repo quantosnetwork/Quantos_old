@@ -1,7 +1,7 @@
 package interpreter
 
 import (
-	"Quantos/quantix/token"
+	"github.com/quantosnetwork/Quantosquantix/token"
 )
 
 func (s *Scanner) scanTokens() []token.Token {

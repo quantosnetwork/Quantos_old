@@ -1,10 +1,10 @@
 package p2p
 
 import (
-	"Quantos/p2p/go-libp2p-core/crypto"
-	p2phost "Quantos/p2p/go-libp2p-core/host"
-	"Quantos/p2p/go-libp2p-core/peer"
-	pstore "Quantos/p2p/go-libp2p-core/peerstore"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/crypto"
+	p2phost "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/host"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/peer"
+	pstore "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/peerstore"
 	"sync"
 )
 
@@ -15,7 +15,6 @@ type P2P struct {
 	identity       peer.ID
 	peerHost       p2phost.Host
 	peerstore      pstore.Peerstore
-
 }
 
 func (p2p *P2P) CheckIfProtoExists(proto string) bool {

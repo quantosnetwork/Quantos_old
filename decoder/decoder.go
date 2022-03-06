@@ -1,14 +1,14 @@
 package decoder
 
 import (
-	"Quantos/crypto"
+	"github.com/quantosnetwork/Quantoscrypto"
 	"bytes"
 	"errors"
 	"strconv"
 )
 
 type Decoder struct {
-	data []byte
+	data   []byte
 	length int
 	cursor int
 }

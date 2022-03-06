@@ -3,7 +3,7 @@ package introspection
 import (
 	"io"
 
-	"Quantos/p2p/go-libp2p-core/introspection/pb"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/introspection/pb"
 )
 
 // Introspector is the interface to be satisfied by components that are capable

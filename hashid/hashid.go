@@ -1,7 +1,7 @@
 package hashid
 
 import (
-	"Quantos/crypto"
+	"github.com/quantosnetwork/Quantoscrypto"
 	"bytes"
 	"hash"
 )
@@ -16,7 +16,7 @@ import (
 	## Purpose
 	Faster chain sync and more flexibility than when dealing with full structure.
 
- */
+*/
 
 type hashID interface {
 	_buildHashId(
@@ -35,11 +35,11 @@ type hashID interface {
 }
 
 type HashID struct {
-	raw []byte
+	raw        []byte
 	workBuffer *bytes.Buffer
-	hashFunc hash.Hash
-	ID hashID `json:"hash_id"`
-	HtID int
+	hashFunc   hash.Hash
+	ID         hashID `json:"hash_id"`
+	HtID       int
 }
 
 type HashIDSignature struct {
@@ -63,11 +63,11 @@ func (hid *HashID) _getHashIDFromHashTable(hID string) []byte {
 	return nil
 }
 
-func (hid *HashID) _encodeHashId() []byte{
+func (hid *HashID) _encodeHashId() []byte {
 	return nil
 }
 
-func (hid *HashID) _decodeHashId() hashID{
+func (hid *HashID) _decodeHashId() hashID {
 	return nil
 }
 

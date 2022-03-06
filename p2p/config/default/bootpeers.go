@@ -1,7 +1,7 @@
 package _default
 
 import (
-	"Quantos/p2p/go-libp2p-core/peer"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/peer"
 	"errors"
 	"fmt"
 	ma "github.com/multiformats/go-multiaddr"
@@ -17,7 +17,6 @@ var DefaultBootstrapAddresses = []string{
 // ErrInvalidPeerAddr signals an address is not a valid peer address.
 var ErrInvalidPeerAddr = errors.New("invalid peer address")
 
-
 func DefaultBootstrapPeers() ([]peer.AddrInfo, error) {
 	ps, err := ParseBootstrapPeers(DefaultBootstrapAddresses)
 	if err != nil {
@@ -26,7 +25,6 @@ This is a problem with the ipfs codebase. Please report it to the dev team`, err
 	}
 	return ps, nil
 }
-
 
 // ParseBootstrapPeer parses a bootstrap list into a list of AddrInfos.
 func ParseBootstrapPeers(addrs []string) ([]peer.AddrInfo, error) {

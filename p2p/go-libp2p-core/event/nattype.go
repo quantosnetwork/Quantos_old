@@ -1,6 +1,6 @@
 package event
 
-import "Quantos/p2p/go-libp2p-core/network"
+import "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/network"
 
 // EvtNATDeviceTypeChanged is an event struct to be emitted when the type of the NAT device changes for a Transport Protocol.
 //

@@ -1,11 +1,11 @@
 package connmgr
 
 import (
-	peer2 "Quantos/p2p/go-libp2p-core/peer"
+	peer2 "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/peer"
 	"context"
 
-	"Quantos/p2p/go-libp2p-core/network"
-	"Quantos/p2p/go-libp2p-core/peer"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/network"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/peer"
 )
 
 // NullConnMgr is a ConnMgr that provides no functionality.

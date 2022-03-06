@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"sync"
 
-	"Quantos/p2p/go-libp2p-core/crypto"
-	pb "Quantos/p2p/go-libp2p-core/record/pb"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/crypto"
+	pb "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/record/pb"
 
 	pool "github.com/libp2p/go-buffer-pool"
 

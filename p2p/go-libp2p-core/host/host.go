@@ -6,13 +6,13 @@ package host
 import (
 	"context"
 
-	"Quantos/p2p/go-libp2p-core/connmgr"
-	"Quantos/p2p/go-libp2p-core/event"
-	"Quantos/p2p/go-libp2p-core/introspection"
-	"Quantos/p2p/go-libp2p-core/network"
-	"Quantos/p2p/go-libp2p-core/peer"
-	"Quantos/p2p/go-libp2p-core/peerstore"
-	"Quantos/p2p/go-libp2p-core/protocol"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/connmgr"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/event"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/introspection"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/network"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/peer"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/peerstore"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/protocol"
 
 	ma "github.com/multiformats/go-multiaddr"
 )

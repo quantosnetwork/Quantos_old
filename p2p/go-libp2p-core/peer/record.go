@@ -5,8 +5,8 @@ import (
 	"sync"
 	"time"
 
-	pb "Quantos/p2p/go-libp2p-core/peer/pb"
-	"Quantos/p2p/go-libp2p-core/record"
+	pb "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/peer/pb"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/record"
 
 	ma "github.com/multiformats/go-multiaddr"
 

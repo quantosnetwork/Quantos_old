@@ -1,9 +1,9 @@
 package p2p
 
 import (
-	p2phost "Quantos/p2p/go-libp2p-core/host"
-	net "Quantos/p2p/go-libp2p-core/network"
-	"Quantos/p2p/go-libp2p-core/protocol"
+	p2phost "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/host"
+	net "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/network"
+	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/protocol"
 	"context"
 	"errors"
 
@@ -31,8 +31,6 @@ type Listeners struct {
 func newListenersLocal() *Listeners {
 	return &Listeners{Listeners: map[string]Listener{}}
 }
-
-
 
 func newListenersP2P(host p2phost.Host) *Listeners {
 	reg := &Listeners{
@@ -146,7 +144,6 @@ func (l *remoteListener) close() {}
 func (l *remoteListener) key() string {
 	return string(l.proto)
 }
-
 
 func (r *Listeners) Register(l Listener) error {
 	r.Lock()
