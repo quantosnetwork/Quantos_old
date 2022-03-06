@@ -1,10 +1,10 @@
 package hashtable
 
 import (
-	"github.com/quantosnetwork/Quantosprotocol"
 	"fmt"
-	"sync"
 	"github.com/davecgh/go-spew/spew"
+	"github.com/quantosnetwork/Quantos/protocol"
+	"sync"
 )
 
 type Key interface{}

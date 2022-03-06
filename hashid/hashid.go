@@ -1,8 +1,8 @@
 package hashid
 
 import (
-	"github.com/quantosnetwork/Quantoscrypto"
 	"bytes"
+	"github.com/quantosnetwork/Quantos/crypto"
 	"hash"
 )
 

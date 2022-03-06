@@ -31,8 +31,8 @@ var newAddressCmd = &cobra.Command{
 		compress, _ := cmd.Flags().GetBool("compress")
 		pass, _ := cmd.Flags().GetString("pass")
 		mnemonic, _ := cmd.Flags().GetString("mnemonic")
-
-		address.NewAddress(compress, pass, mnemonic)
+		address.NewQBITAddress(compress, pass, mnemonic)
+		//address.NewAddress(compress, pass, mnemonic)
 
 	},
 }

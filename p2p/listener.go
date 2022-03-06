@@ -1,9 +1,9 @@
 package p2p
 
 import (
-	p2phost "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/host"
-	net "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/network"
-	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/protocol"
+	p2phost "github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/host"
+	net "github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/network"
+	"github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/protocol"
 	"context"
 	"errors"
 

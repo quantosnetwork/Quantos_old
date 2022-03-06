@@ -1,7 +1,7 @@
 package interpreter
 
 import (
-	"github.com/quantosnetwork/Quantosquantix/token"
+	"github.com/quantosnetwork/Quantos/quantix/token"
 	"io/ioutil"
 	"unicode"
 )

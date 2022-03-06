@@ -4,7 +4,7 @@ import (
 	"io"
 	"time"
 
-	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/peer"
+	"github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/peer"
 )
 
 // Decayer is implemented by connection managers supporting decaying tags. A

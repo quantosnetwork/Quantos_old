@@ -1,8 +1,8 @@
 package event
 
 import (
-	peer "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/peer"
-	protocol "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/protocol"
+	peer "github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/peer"
+	protocol "github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/protocol"
 )
 
 // EvtPeerProtocolsUpdated should be emitted when a peer we're connected to adds or removes protocols from their stack.

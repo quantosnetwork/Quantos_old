@@ -1,8 +1,8 @@
 package protocol
 
 import (
-	"github.com/quantosnetwork/Quantosdecoder"
-	"github.com/quantosnetwork/Quantosencoder"
+	"github.com/quantosnetwork/Quantos/decoder"
+	"github.com/quantosnetwork/Quantos/encoder"
 )
 
 func MarshalTo(dst []byte, data interface{}) ([]byte, error) {

@@ -1,9 +1,9 @@
 package events
 
 import (
-	"github.com/quantosnetwork/Quantosevents/set"
 	"fmt"
 	"github.com/fsnotify/fsnotify"
+	"github.com/quantosnetwork/Quantos/events/set"
 	"sync"
 	"time"
 )

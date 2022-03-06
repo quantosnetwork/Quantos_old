@@ -1,7 +1,7 @@
 package config
 
 import (
-	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/peer"
+	"github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/peer"
 )
 
 // Peering configures the peering service.

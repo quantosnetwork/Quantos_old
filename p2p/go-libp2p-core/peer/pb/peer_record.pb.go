@@ -28,7 +28,7 @@ const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 //
 // PeerRecords are designed to be serialized to bytes and placed inside of
 // SignedEnvelopes before sharing with other peers.
-// See https://github.com/quantosnetwork/Quantosp2p/go-libp2p-core/record/pb/envelope.proto for
+// See https://github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/record/pb/envelope.proto for
 // the SignedEnvelope definition.
 type PeerRecord struct {
 	// peer_id contains a libp2p peer id in its binary representation.

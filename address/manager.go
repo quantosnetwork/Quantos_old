@@ -1,9 +1,9 @@
 package address
 
 import (
-	"github.com/quantosnetwork/Quantosuint512"
 	"context"
 	"github.com/holiman/uint256"
+	"github.com/quantosnetwork/Quantos/uint512"
 )
 
 type addressManager interface {

@@ -1,8 +1,8 @@
 package network
 
 import (
-	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/peer"
-	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/protocol"
+	"github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/peer"
+	"github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/protocol"
 )
 
 // ResourceManager is the interface to the network resource management subsystem.

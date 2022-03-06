@@ -8,8 +8,8 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/crypto"
-	crypto_pb "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/crypto/pb"
+	"github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/crypto"
+	crypto_pb "github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/crypto/pb"
 )
 
 var message = []byte("Libp2p is the _best_!")

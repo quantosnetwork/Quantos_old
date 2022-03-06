@@ -16,9 +16,8 @@ limitations under the License.
 package cmd
 
 import (
-	"github.com/quantosnetwork/Quantosprotocol"
 	"fmt"
-
+	"github.com/quantosnetwork/Quantos/protocol"
 	"github.com/spf13/cobra"
 )
 

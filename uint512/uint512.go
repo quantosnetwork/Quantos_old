@@ -1,11 +1,11 @@
 package uint512
 
 import (
-	"github.com/quantosnetwork/Quantoscrypto"
 	"bytes"
 	"crypto/sha256"
 	"encoding/hex"
 	"github.com/holiman/uint256"
+	"github.com/quantosnetwork/Quantos/crypto"
 	"github.com/zeebo/blake3"
 	"go.dedis.ch/kyber/v3"
 	"go.dedis.ch/kyber/v3/group/edwards25519"

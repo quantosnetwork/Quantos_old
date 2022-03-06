@@ -12,7 +12,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/crypto/pb"
+	"github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/crypto/pb"
 
 	"github.com/gogo/protobuf/proto"
 )

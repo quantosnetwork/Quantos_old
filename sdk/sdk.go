@@ -1,8 +1,8 @@
 package sdk
 
 import (
-	"github.com/quantosnetwork/Quantosaddress"
-	"github.com/quantosnetwork/Quantoscrypto"
+	"github.com/quantosnetwork/Quantos/address"
+	"github.com/quantosnetwork/Quantos/crypto"
 	"go.dedis.ch/kyber/v3"
 	"go.dedis.ch/kyber/v3/suites"
 	"net"

@@ -1,10 +1,10 @@
 package ast
 
 import (
-	"github.com/quantosnetwork/Quantosquantix/runeset"
-	"github.com/quantosnetwork/Quantosquantix/token"
 	"bytes"
 	"fmt"
+	"github.com/quantosnetwork/Quantos/quantix/runeset"
+	"github.com/quantosnetwork/Quantos/quantix/token"
 )
 
 // TriState has values: {Undefined, False, True}

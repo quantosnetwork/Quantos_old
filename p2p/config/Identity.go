@@ -1,7 +1,7 @@
 package config
 
 import (
-	ic "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/crypto"
+	ic "github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/crypto"
 	"encoding/base64"
 )
 

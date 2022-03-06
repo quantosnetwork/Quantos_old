@@ -1,7 +1,7 @@
 package go_libp2p_core
 
 import (
-	pcrypto "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/crypto"
+	pcrypto "github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/crypto"
 )
 
 var _ pcrypto.PrivKey

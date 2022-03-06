@@ -1,9 +1,9 @@
 package decoder
 
 import (
-	"github.com/quantosnetwork/Quantoscrypto"
 	"bytes"
 	"errors"
+	"github.com/quantosnetwork/Quantos/crypto"
 	"strconv"
 )
 

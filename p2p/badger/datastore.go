@@ -12,7 +12,7 @@ import (
 	"strings"
 	"sync"
 	"time"
-	ds "github.com/quantosnetwork/Quantosp2p/repo"
+	ds "github.com/quantosnetwork/Quantos/protocol/p2p/repo"
 	dsq "github.com/ipfs/go-datastore/query"
 )
 

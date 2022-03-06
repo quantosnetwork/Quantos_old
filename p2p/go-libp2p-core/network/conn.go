@@ -4,8 +4,8 @@ import (
 	"context"
 	"io"
 
-	ic "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/crypto"
-	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/peer"
+	ic "github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/crypto"
+	"github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/peer"
 
 	ma "github.com/multiformats/go-multiaddr"
 )

@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"io"
 
-	pb "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/crypto/pb"
+	pb "github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/crypto/pb"
 )
 
 // Ed25519PrivateKey is an ed25519 private key.

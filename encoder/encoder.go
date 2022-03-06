@@ -1,7 +1,7 @@
 package encoder
 
 import (
-	"github.com/quantosnetwork/Quantoscrypto"
+	"github.com/quantosnetwork/Quantos/crypto"
 
 	"fmt"
 

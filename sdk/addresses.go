@@ -1,9 +1,9 @@
 package sdk
 
 import (
-	"github.com/quantosnetwork/Quantossdk/config"
-	"github.com/quantosnetwork/Quantosuint512"
 	"github.com/holiman/uint256"
+	"github.com/quantosnetwork/Quantos/sdk/config"
+	"github.com/quantosnetwork/Quantos/uint512"
 	"math/big"
 )
 

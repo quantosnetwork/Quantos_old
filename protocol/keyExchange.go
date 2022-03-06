@@ -1,11 +1,11 @@
 package protocol
 
 import (
-	"github.com/quantosnetwork/Quantoscrypto"
 	"bufio"
 	"errors"
 	"fmt"
 	"github.com/open-quantum-safe/liboqs-go/oqs"
+	"github.com/quantosnetwork/Quantos/crypto"
 	"io"
 	"log"
 	"net"

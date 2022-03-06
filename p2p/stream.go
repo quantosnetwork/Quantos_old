@@ -1,15 +1,15 @@
 package p2p
 
 import (
-	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/connmgr"
-	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/peer"
-	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/protocol"
+	"github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/connmgr"
+	"github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/peer"
+	"github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/protocol"
 
 	"io"
 
 	ma "github.com/multiformats/go-multiaddr"
 	manet "github.com/multiformats/go-multiaddr/net"
-	net "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/network"
+	net "github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/network"
 	"sync"
 )
 

@@ -1,8 +1,8 @@
 package crypto
 
 import (
-	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/crypto/pb"
 	"bytes"
+	"github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/crypto/pb"
 	"go.dedis.ch/kyber/v3"
 	"go.dedis.ch/kyber/v3/group/edwards25519"
 	"go.dedis.ch/kyber/v3/sign/schnorr"

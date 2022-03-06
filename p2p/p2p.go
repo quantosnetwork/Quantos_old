@@ -1,10 +1,10 @@
 package p2p
 
 import (
-	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/crypto"
-	p2phost "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/host"
-	"github.com/quantosnetwork/Quantosp2p/go-libp2p-core/peer"
-	pstore "github.com/quantosnetwork/Quantosp2p/go-libp2p-core/peerstore"
+	"github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/crypto"
+	p2phost "github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/host"
+	"github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/peer"
+	pstore "github.com/quantosnetwork/Quantos/protocol/p2p/go-libp2p-core/peerstore"
 	"sync"
 )
 
